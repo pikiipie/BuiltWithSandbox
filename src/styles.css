@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 24px;
+}
+
+ul:not(.paging) {
+  list-style-type: none;
+  padding: 24px;
+}
+
+.post__lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.post__lists select {
+  width: max-content;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.post__lists li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  padding: 16px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.post__lists li::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.post__lists li:hover::before {
+  display: block;
+}
+
+.post__lists li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.post__lists li h4 {
+  color: blue;
+  text-transform: capitalize;
+}
+
+.paging {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.paging li {
+  height: 24px;
+  min-width: 24px;
+  padding: 0 8px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.paging li:hover {
+  filter: brightness(0.95);
+}
+
+.paging li.active {
+  background: blue;
+  border-color: blue;
+  color: white;
+}
+
+.paging li.disable {
+  color: lightgray;
+  background: unset;
+  cursor: default;
+}
+
+.form__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form__group label {
+  text-transform: capitalize;
+  font-size: 0.8em;
+}
